@@ -1,0 +1,25 @@
+title New note on Single Page App
+
+note over browser:
+spa.js get form element by id 
+then prevents default handling, 
+create a new object note with 
+content and date, add to notes 
+array, run redrawNotes and send 
+new object to server in the 
+request body as JSON
+end note
+
+browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+
+note over server:
+Server add req.body.note to 
+notes array and send JSON 
+to browser 
+end note
+
+server-->browser: {"message":"note created"}, response code 201
+
+note over browser:
+console log response
+end note

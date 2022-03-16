@@ -1,0 +1,20 @@
+title Single Page App
+browser->server: HTTP GET https://fullstack-exampleapp.herokuapp.com/spa
+server-->browser: HTML-code
+browser->server: HTTP GET https://fullstack-exampleapp.herokuapp.com/main.css
+server-->browser: main.css
+browser->server: HTTP GET https://fullstack-exampleapp.herokuapp.com/spa.js
+server-->browser: spa.js
+
+note over browser:
+Browser execute spa.js and 
+requests data.json from server 
+end note
+
+browser->server: HTTP GET https://fullstack-exampleapp.herokuapp.com/data.json
+server-->browser: [{ content: "Hello World!!", date: "2022-03-16" }, ...]
+
+note over browser:
+Browser executes event handler that 
+run redrawNotes that renders notes 
+end note

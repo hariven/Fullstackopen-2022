@@ -1,0 +1,37 @@
+note over browser:
+User type data and 
+click submit btn.
+Browser generates post request
+end note
+
+
+
+browser->server: HTTP POST https://fullstack-exampleapp.herokuapp.com/new_note
+
+note over server:
+Server create new object with 
+content: req.body.note and 
+date: new Date(), then new 
+object added to notes array
+end note
+
+server-->browser: URL Redirect to /notes, Status code 302
+browser->server: HTTP GET https://fullstack-exampleapp.herokuapp.com/notes
+server-->browser: HTML code
+browser->server: HTTP GET https://fullstack-exampleapp.herokuapp.com/main.css
+server-->browser: main.css
+browser->server: HTTP GET https://fullstack-exampleapp.herokuapp.com/main.js
+server-->browser: main.js
+
+note over browser:
+Browser execute main.js file that
+requests JSON data from the server 
+end note
+
+browser->server: HTTP GET https://fullstack-exampleapp.herokuapp.com/data.json
+server-->browser: [{ content: "Hello World!!", date: "2022-03-16" }, ...]
+
+note over browser:
+Browser executes the event handler
+that renders the notes
+end note
